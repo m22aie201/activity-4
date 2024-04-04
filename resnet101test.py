@@ -48,7 +48,7 @@ resnet101.fc = nn.Linear(resnet101.fc.in_features, 10)
 
 """Run either of optimizer apply"""
 
-optimizer = optim.Adagrad(resnet101.parameters(), lr=0.001)
+optimizer = optim.Adagrad(resnet101.parameters(), lr=0.005)
 
 criterion = nn.CrossEntropyLoss()
 
@@ -62,7 +62,7 @@ for batch in trainloader:
   outputs = resnet101(features)
 
   loss = criterion(outputs, labels)
-  loss.backward()
+  
   optimizer.step()
 
   current_loss += loss.item()
