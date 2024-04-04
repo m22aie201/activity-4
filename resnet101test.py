@@ -66,4 +66,5 @@ for batch in trainloader:
   optimizer.step()
 
   current_loss += loss.item()
-print(f'batch loss is : {current_loss}')
+  print(f'current batch loss is : {current_loss}')
+print(f'overall batch loss is : {current_loss}')
